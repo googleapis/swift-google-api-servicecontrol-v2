@@ -25,11 +25,11 @@ extension Clients {
   protocol ServiceControllerStub {
     func check(
       request: CheckRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleApiServicecontrolV2.CheckResponse
+    ) async throws -> GoogleApiServiceControlV2.CheckResponse
 
     func report(
       request: ReportRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleApiServicecontrolV2.ReportResponse
+    ) async throws -> GoogleApiServiceControlV2.ReportResponse
   }
 
   class ServiceControllerTransport: ServiceControllerStub {
@@ -42,7 +42,7 @@ extension Clients {
 
     public func check(
       request: CheckRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleApiServicecontrolV2.CheckResponse {
+    ) async throws -> GoogleApiServiceControlV2.CheckResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.serviceName as Swift.String?, !pathVariable0.isEmpty
         else {
@@ -60,12 +60,12 @@ extension Clients {
       req.httpBody = try JSONEncoder().encode(request)
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleApiServicecontrolV2.CheckResponse.self, from: data)
+        GoogleApiServiceControlV2.CheckResponse.self, from: data)
     }
 
     public func report(
       request: ReportRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleApiServicecontrolV2.ReportResponse {
+    ) async throws -> GoogleApiServiceControlV2.ReportResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.serviceName as Swift.String?, !pathVariable0.isEmpty
         else {
@@ -83,7 +83,7 @@ extension Clients {
       req.httpBody = try JSONEncoder().encode(request)
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleApiServicecontrolV2.ReportResponse.self, from: data)
+        GoogleApiServiceControlV2.ReportResponse.self, from: data)
     }
   }
 }
