@@ -27,8 +27,8 @@ let package = Package(
     .package(path: "../../packages/auth"),
     .package(path: "../../packages/gax"),
     .package(path: "../../packages/wkt"),
-    .package(path: "../../generated/google-rpc"),
-    .package(path: "../../generated/google-rpc-context"),
+    .package(path: "../../generated/swift-google-rpc"),
+    .package(path: "../../generated/swift-google-rpc-context"),
     .package(url: "https://github.com/apple/swift-log", from: "1.12.0"),
   ],
   targets: [
@@ -38,8 +38,8 @@ let package = Package(
         .product(name: "GoogleCloudAuth", package: "auth"),
         .product(name: "GoogleCloudGax", package: "gax"),
         .product(name: "GoogleCloudWKT", package: "wkt"),
-        .product(name: "GoogleRpc", package: "google-rpc"),
-        .product(name: "GoogleRpcContext", package: "google-rpc-context"),
+        .product(name: "GoogleRpc", package: "swift-google-rpc"),
+        .product(name: "GoogleRpcContext", package: "swift-google-rpc-context"),
         .product(name: "Logging", package: "swift-log"),
       ],
     )
